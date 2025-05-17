@@ -29,7 +29,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   return (
-    <div className="flex flex-column">
+    <div className="flex flex-column flex-1">
       <TextField
         fullWidth
         variant="outlined"
