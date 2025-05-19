@@ -5,6 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.tsx";
 import DashboardLayout from "./layouts/DashboardLayout.tsx";
 import "./styles.css";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import theme from "./utils/theme.ts";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </StrictMode>
 );
