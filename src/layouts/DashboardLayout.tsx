@@ -1,4 +1,3 @@
-// layouts/DashboardLayout.tsx
 import React from "react";
 import { Outlet } from "react-router-dom";
 import {
@@ -14,7 +13,7 @@ import {
   Menu as MenuIcon,
   ChevronLeft as ChevronLeftIcon,
 } from "@mui/icons-material";
-import SidebarMenu from "../components/common/SideBarList/SideBarMenu";
+import SidebarMenu from "../components/common/SideBarMenu/SideBarMenu";
 
 const drawerWidth = 240;
 const miniDrawerWidth = 60;

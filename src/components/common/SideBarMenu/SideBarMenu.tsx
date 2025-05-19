@@ -1,4 +1,3 @@
-// components/common/SideBarList/SideBarMenu.tsx
 import React from "react";
 import {
   Divider,
@@ -10,6 +9,8 @@ import {
   ListItemButton,
 } from "@mui/material";
 import { Home as HomeIcon } from "@mui/icons-material";
+import GroupIcon from "@mui/icons-material/Group";
+import { Link } from "react-router-dom";
 
 interface SidebarMenuProps {
   open: boolean;
@@ -23,6 +24,8 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({ open }) => {
       <Divider />
       <Tooltip title="Home" placement="right" disableHoverListener={open}>
         <ListItemButton
+          component={Link}
+          to="/"
           sx={{ "&:hover": { backgroundColor: theme.palette.action.hover } }}
         >
           <ListItemIcon sx={{ minWidth: 40 }}>
@@ -31,6 +34,24 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({ open }) => {
           {open && (
             <ListItemText
               primary="Home"
+              primaryTypographyProps={{ color: theme.palette.text.primary }}
+            />
+          )}
+        </ListItemButton>
+      </Tooltip>
+      <Divider />
+      <Tooltip title="Prospectos" placement="right" disableHoverListener={open}>
+        <ListItemButton
+          component={Link}
+          to="data"
+          sx={{ "&:hover": { backgroundColor: theme.palette.action.hover } }}
+        >
+          <ListItemIcon sx={{ minWidth: 40 }}>
+            <GroupIcon />
+          </ListItemIcon>
+          {open && (
+            <ListItemText
+              primary="Prospectos"
               primaryTypographyProps={{ color: theme.palette.text.primary }}
             />
           )}
