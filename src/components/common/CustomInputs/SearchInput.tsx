@@ -8,6 +8,7 @@ interface SearchBarProps {
   handleValue: (value: string) => void;
   handleSearch: (value: string) => void;
   isDisable?: boolean;
+  label?: string;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -15,6 +16,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   handleValue,
   handleSearch,
   isDisable = false,
+  label = "Buscar",
 }) => {
   const handleClear = () => {
     handleValue("");
@@ -36,7 +38,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
         value={value}
         onChange={handleChange}
         disabled={isDisable}
-        label="Buscar..."
+        label={label}
         size="medium"
         InputProps={{
           endAdornment: (
