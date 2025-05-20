@@ -1,15 +1,9 @@
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-  type SelectChangeEvent,
-} from "@mui/material";
+import { TextField, type SelectChangeEvent } from "@mui/material";
 
 export interface FilterValues {
-  category?: string;
-  searchTerm?: string;
+  name?: string;
+  numReview?: number;
+  numStars?: number;
 }
 
 interface FilterFieldsProps {
@@ -30,29 +24,12 @@ const FilterFieldsDahBoard: React.FC<FilterFieldsProps> = ({
 
   return (
     <div className="flex flex-col gap-4 pt-2">
-      <FormControl fullWidth>
-        <InputLabel id="category-label">Categoría</InputLabel>
-        <Select
-          labelId="category-label"
-          name="category"
-          value={filters.category || ""}
-          onChange={handleChange}
-          label="Categoría"
-        >
-          <MenuItem value="">
-            <em>Ninguna</em>
-          </MenuItem>
-          <MenuItem value="A">A</MenuItem>
-          <MenuItem value="B">B</MenuItem>
-          <MenuItem value="C">C</MenuItem>
-        </Select>
-      </FormControl>
-
+      {/* Name */}
       <TextField
         fullWidth
-        label="Término de búsqueda"
-        name="searchTerm"
-        value={filters.searchTerm || ""}
+        label="Nombre o  numero de telefono"
+        name="name"
+        value={filters.name || ""}
         onChange={handleChange}
       />
     </div>
